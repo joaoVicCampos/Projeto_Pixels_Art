@@ -10,10 +10,11 @@ header h1{
 
 #color-palette{
     text-align: center;
-    border: 1px solid black;
+    
 }
 
 .color{ 
     display: inline-block;
     margin: 70px;
+    border: 1px solid black;
 }
