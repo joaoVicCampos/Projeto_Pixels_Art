@@ -1,6 +1,7 @@
 window.onload = () => {
 const secaoCores = document.getElementById('color-palette');
-    
+const paleta = document.getElementById('color-palette')
+           
     function criaH2 (){
         const newColorGreen = document.createElement('div'); 
         newColorGreen.className = 'color';
@@ -58,7 +59,17 @@ const secaoCores = document.getElementById('color-palette');
                 sectionQuadro.appendChild(linha);
             }
         }     
-    
+        
+    paleta.addEventListener('click', (event) =>{
+        const corSelecionada = document.querySelector('.selected')
+        if(corSelecionada){
+            corSelecionada.classList.remove('selected')
+        }
+
+
+        event.target.classList.add('selected')
+    })
+        
     criaH2();   
     mudaCorH2();
     criaQuadro();
