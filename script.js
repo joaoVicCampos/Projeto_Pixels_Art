@@ -7,22 +7,19 @@ const cadaPixel = document.getElementsByClassName('pixel');
         const newColorGreen = document.createElement('div'); 
         newColorGreen.className = 'color';
         newColorGreen.id = 'corVerde'
-        newColorGreen.innerText = 'Verde'
         secaoCores.appendChild(newColorGreen);
         const newColorRed = document.createElement('div');
         newColorRed.className = 'color';
-        newColorRed.id = 'corVermelha'
-        newColorRed.innerText = 'Red'
+        newColorRed.id = 'corVermelha'  
         secaoCores.appendChild(newColorRed)
         const newColorBlue = document.createElement('div');
         newColorBlue.className = 'color';
-        newColorBlue.id = 'corAzul'
-        newColorBlue.innerText = 'Azul'
+        newColorBlue.id = 'corAzul'  
         secaoCores.appendChild(newColorBlue)
         const newColorPurple = document.createElement('div');
         newColorPurple.className = 'color';
         newColorPurple.id = 'corRoxa'
-        newColorPurple.innerText = 'Roxo';
+        
         secaoCores.appendChild(newColorPurple);
 
 }
@@ -94,14 +91,32 @@ const cadaPixel = document.getElementsByClassName('pixel');
         divBtn.appendChild(botao);
         const todosPixels = document.querySelectorAll('.pixel')
         botao.addEventListener('click', () => {
-            for(elemento of todosPixels)
+            for(elemento of todosPixels){
             elemento.style.backgroundColor = 'white'
+            }
         })
 
 
     }
 
-
+    function criaBotaoAleatorio(){
+        const coresPaleta = document.querySelectorAll('.color')
+        const letras = '0123456789ABCDEF'
+        const botaoRandom = document.getElementById('botao-random');
+        const newBtn = document.createElement('button');
+        newBtn.id = 'button-random-color';
+        newBtn.innerText = 'Cores aleatórias';
+        botaoRandom.appendChild(newBtn);
+        newBtn.addEventListener('click', () => {
+            for(const elemento of coresPaleta){
+                let corAletoria = '#';
+                for(let index = 0; index < 6; index += 1){
+              corAletoria += letras[Math.floor(Math.random() * 16)];                   
+            }
+            elemento.style.backgroundColor = corAletoria;
+        }
+        });
+    } 
 
     criaDiv();   
     mudaCorH2();
@@ -109,4 +124,4 @@ const cadaPixel = document.getElementsByClassName('pixel');
     criaSelected();
     selecionaPixel();
     criaBotao();
-    
+    criaBotaoAleatorio();
