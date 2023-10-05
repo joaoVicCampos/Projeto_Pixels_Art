@@ -47,3 +47,11 @@ header h1{
 .selected{
     border: 2px solid red;
 }
+
+#clear-board{
+    text-align: center;
+    position: relative;
+    margin-left: 620px;
+    margin-top: 20px;
+    
+}

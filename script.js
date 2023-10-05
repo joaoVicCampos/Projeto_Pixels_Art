@@ -84,7 +84,23 @@ const cadaPixel = document.getElementsByClassName('pixel');
             })
         }
         
+}
+
+    function criaBotao(){
+        const divBtn = document.getElementById('botao');
+        const botao = document.createElement('button');
+        botao.id = 'clear-board';
+        botao.innerText = 'Limpar';
+        divBtn.appendChild(botao);
+        const todosPixels = document.querySelectorAll('.pixel')
+        botao.addEventListener('click', () => {
+            for(elemento of todosPixels)
+            elemento.style.backgroundColor = 'white'
+        })
+
+
     }
+
 
 
     criaH2();   
@@ -92,4 +108,5 @@ const cadaPixel = document.getElementsByClassName('pixel');
     criaQuadro();
     criaSelected();
     selecionaPixel();
+    criaBotao();
     
