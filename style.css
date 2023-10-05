@@ -51,7 +51,17 @@ header h1{
 #clear-board{
     text-align: center;
     position: relative;
-    margin-left: 620px;
+    margin-left: 550px;
     margin-top: 20px;
     
+}
+
+#button-random-color{
+    margin-left: 640px;
+    position: relative;
+    bottom: 20px;
+}
+
+.botoes-container{
+    display: inline-block;
 }
