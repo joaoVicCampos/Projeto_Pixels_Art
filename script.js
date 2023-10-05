@@ -3,7 +3,7 @@ const secaoCores = document.getElementById('color-palette');
 const paleta = document.getElementById('color-palette');
 const cadaPixel = document.getElementsByClassName('pixel'); 
          
-    function criaH2 (){
+    function criaDiv (){
         const newColorGreen = document.createElement('div'); 
         newColorGreen.className = 'color';
         newColorGreen.id = 'corVerde'
@@ -103,7 +103,7 @@ const cadaPixel = document.getElementsByClassName('pixel');
 
 
 
-    criaH2();   
+    criaDiv();   
     mudaCorH2();
     criaQuadro();
     criaSelected();
