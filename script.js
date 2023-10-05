@@ -1,36 +1,41 @@
-
+window.onload = () => {
 const secaoCores = document.getElementById('color-palette');
+    
     function criaH2 (){
-        const newColorGreen = document.createElement('h2'); 
+        const newColorGreen = document.createElement('div'); 
         newColorGreen.className = 'color';
-        newColorGreen.innerText = 'Verde';
+        newColorGreen.id = 'corVerde'
+        newColorGreen.innerText = 'Verde'
         secaoCores.appendChild(newColorGreen);
-        const newColorRed = document.createElement('h2');
+        const newColorRed = document.createElement('div');
         newColorRed.className = 'color';
-        newColorRed.innerText = 'Vermelho';
+        newColorRed.id = 'corVermelha'
+        newColorRed.innerText = 'Vermelho'
         secaoCores.appendChild(newColorRed)
-        const newColorBlue = document.createElement('h2');
+        const newColorBlue = document.createElement('div');
         newColorBlue.className = 'color';
-        newColorBlue.innerText = 'Azul';
+        newColorBlue.id = 'corAzul'
+        newColorBlue.innerText = 'Azul'
         secaoCores.appendChild(newColorBlue)
-        const newColorPink = document.createElement('h2');
-        newColorPink.className = 'color';
-        newColorPink.innerText = 'Rosa';
-        secaoCores.appendChild(newColorPink);
+        const newColorPurple = document.createElement('div');
+        newColorPurple.className = 'color';
+        newColorPurple.id = 'corRoxa'
+        newColorPurple.innerText = 'Roxo';
+        secaoCores.appendChild(newColorPurple);
+
     }
-    
     function mudaCorH2 (){
-        const colorGreen = document.getElementsByClassName('color')[0]
-        colorGreen.style.color = 'green'; 
-        const colorRed = document.getElementsByClassName('color')[1]
-        colorRed.style.color = 'red'
-        const colorBlue = document.getElementsByClassName('color')[2]
-        colorBlue.style.color = 'blue'
-        const colorPink = document.getElementsByClassName('color')[3]
-        colorPink.style.color = 'pink'
+        const colorGreen = document.getElementById('corVerde'); 
+        colorGreen.style.backgroundColor = '#006400'; 
+        const colorRed = document.getElementById('corVermelha');
+        colorRed.style.backgroundColor = '#8b0000';
+        const colorBlue = document.getElementById('corAzul');
+        colorBlue.style.backgroundColor = '#000066';
+        const colorPurple = document.getElementById('corRoxa');
+        colorPurple.style.backgroundColor = '#66004d'; 
+        
     }
-    
     criaH2();
     mudaCorH2();
-
+}
 
