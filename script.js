@@ -1,7 +1,8 @@
-window.onload = () => {
+
 const secaoCores = document.getElementById('color-palette');
-const paleta = document.getElementById('color-palette')
-           
+const paleta = document.getElementById('color-palette');
+const cadaPixel = document.getElementsByClassName('pixel'); 
+         
     function criaH2 (){
         const newColorGreen = document.createElement('div'); 
         newColorGreen.className = 'color';
@@ -24,7 +25,7 @@ const paleta = document.getElementById('color-palette')
         newColorPurple.innerText = 'Roxo';
         secaoCores.appendChild(newColorPurple);
 
-    }
+}
     function mudaCorH2 (){
         const colorGreen = document.getElementById('corVerde'); 
         colorGreen.style.backgroundColor = '#006400'; 
@@ -39,7 +40,7 @@ const paleta = document.getElementById('color-palette')
         colorPurple.style.color = '#66004d'
         colorPurple.style.backgroundColor = '#66004d'; 
         
-    }
+}
 
     function criaQuadro (){       
          
@@ -57,9 +58,10 @@ const paleta = document.getElementById('color-palette')
                 }
                 
                 sectionQuadro.appendChild(linha);
-            }
-        }     
-        
+            } 
+}     
+    
+    function criaSelected(){ 
     paleta.addEventListener('click', (event) =>{
         const corSelecionada = document.querySelector('.selected')
         if(corSelecionada){
@@ -69,8 +71,25 @@ const paleta = document.getElementById('color-palette')
 
         event.target.classList.add('selected')
     })
+} 
+
+    function selecionaPixel(){
+        for(elemento of cadaPixel){
+            elemento.addEventListener('click', (event) => {
+                const pixelSelecionado = document.querySelector('.selected')
+                if(pixelSelecionado){
+                    event.target.style.backgroundColor = pixelSelecionado.style.backgroundColor;    
+                
+                }
+            })
+        }
         
+    }
+
+
     criaH2();   
     mudaCorH2();
     criaQuadro();
-    }
+    criaSelected();
+    selecionaPixel();
+    

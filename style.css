@@ -11,8 +11,8 @@ header h1{
 
 #color-palette{
     text-align: center;
-    
-    
+    margin: 0;
+    padding: 0;
 }
 
 .color{ 
@@ -26,6 +26,8 @@ header h1{
 #pixel-board{
     text-align: center;
     width: 5 * 40px;
+    margin-left: 542px;
+    margin-top: 20px;
 }
 
 .pixel{
