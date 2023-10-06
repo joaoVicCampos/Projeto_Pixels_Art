@@ -65,3 +65,7 @@ header h1{
 .botoes-container{
     display: inline-block;
 }
+#inpu-size-box{
+    position: absolute;
+    text-align: center;
+}

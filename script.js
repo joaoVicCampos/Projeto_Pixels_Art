@@ -36,16 +36,16 @@ const cadaPixel = document.getElementsByClassName('pixel');
         colorPurple.style.backgroundColor = '#66004d'; 
 }
 
-    function criaQuadro () {       
+    function criaQuadro (tamanho) {       
          
             const sectionQuadro = document.getElementById('pixel-board');           
-               const tamanhoQuadro = 5;
+               //const tamanhoQuadro = 5;
             
-            for (let index = 0; index < tamanhoQuadro; index += 1) {
+            for (let index = 0; index < tamanho; index += 1) {
                 const linha = document.createElement('div');
                 linha.classList.add('linha'); 
                 
-                for (let j = 0; j < tamanhoQuadro; j += 1) {
+                for (let j = 0; j < tamanho; j += 1) {
                     const pixel = document.createElement('div');
                     pixel.classList.add('pixel');
                     linha.appendChild(pixel);
@@ -135,12 +135,38 @@ const cadaPixel = document.getElementsByClassName('pixel');
           }
         }
       }
+      function criaInputTamanhoQuadro() {
+            const divInput = document.getElementById('input-size-box');
+            const newInput = document.createElement('input');
+            newInput.id = 'board-size';
+            newInput.type = 'number';
+            newInput.placeholder = 'Tamanho do Quadro';
+            newInput.min = 1;
+            divInput.appendChild(newInput);
+            const btnInput = document.createElement('button');
+            btnInput.id = 'generate-board';
+            btnInput.innerText = 'VQV';
+            divInput.appendChild(btnInput);
+
+            btnInput.addEventListener('click', () => {
+                const newSize = parseInt(newInput.value);
+                if(!isNaN(newSize) && newSize > 0){
+                    const newQuadro = document.getElementById('pixel-board')
+                    newQuadro.innerHTML = '';
+                    criaQuadro(newSize);
+                }else
+                    window.alert('Board inválido!')
+                
+            })
+      } 
+    
 
     criaDiv();   
     mudaCorH2();
-    criaQuadro();
+    criaQuadro(5);
     carregarEstadoQuadro();
     criaSelected();
     selecionaPixel();
     criaBotao();
     criaBotaoAleatorio();
+    criaInputTamanhoQuadro();
