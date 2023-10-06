@@ -134,7 +134,7 @@ const cadaPixel = document.getElementsByClassName('pixel');
           const pixelBoard= JSON.parse(estadoQuadroString);
       
           for (let index = 0; index < pixelBoard.length; index += 1) {
-            cadaPixel[index].style.backgroundColor = pixelBoard[i];
+            cadaPixel[index].style.backgroundColor = pixelBoard[index];
           }
         }
       }
