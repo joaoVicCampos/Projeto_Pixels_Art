@@ -76,7 +76,7 @@ const cadaPixel = document.getElementsByClassName('pixel');
                 const pixelSelecionado = document.querySelector('.selected')
                 if(pixelSelecionado){
                     event.target.style.backgroundColor = pixelSelecionado.style.backgroundColor;    
-                
+                salvarEstadoQuadro();
                 }
             })
         }
@@ -118,9 +118,31 @@ const cadaPixel = document.getElementsByClassName('pixel');
         });
     } 
 
+    function salvarEstadoQuadro() {
+        const pixelBoard = [];
+      
+        for (const pixel of cadaPixel) {
+            pixelBoard.push(pixel.style.backgroundColor || 'white');
+        }
+      
+        localStorage.setItem('pixelBoard', JSON.stringify(pixelBoard));
+      }
+      function carregarEstadoQuadro() {
+        const estadoQuadroString = localStorage.getItem('pixelBoard');
+      
+        if (estadoQuadroString) {
+          const pixelBoard= JSON.parse(estadoQuadroString);
+      
+          for (let index = 0; index < pixelBoard.length; index += 1) {
+            cadaPixel[index].style.backgroundColor = pixelBoard[i];
+          }
+        }
+      }
+
     criaDiv();   
     mudaCorH2();
     criaQuadro();
+    carregarEstadoQuadro();
     criaSelected();
     selecionaPixel();
     criaBotao();
