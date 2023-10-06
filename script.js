@@ -3,43 +3,40 @@ const secaoCores = document.getElementById('color-palette');
 const paleta = document.getElementById('color-palette');
 const cadaPixel = document.getElementsByClassName('pixel'); 
          
-    function criaDiv (){
+    function criaDiv () {
         const newColorGreen = document.createElement('div'); 
         newColorGreen.className = 'color';
-        newColorGreen.id = 'corVerde'
+        newColorGreen.id = 'corVerde';
         secaoCores.appendChild(newColorGreen);
         const newColorRed = document.createElement('div');
         newColorRed.className = 'color';
-        newColorRed.id = 'corVermelha'  
+        newColorRed.id = 'corVermelha'  ;
         secaoCores.appendChild(newColorRed)
         const newColorBlue = document.createElement('div');
         newColorBlue.className = 'color';
-        newColorBlue.id = 'corAzul'  
+        newColorBlue.id = 'corAzul'; 
         secaoCores.appendChild(newColorBlue)
         const newColorPurple = document.createElement('div');
         newColorPurple.className = 'color';
-        newColorPurple.id = 'corRoxa'
-        
+        newColorPurple.id = 'corRoxa';  
         secaoCores.appendChild(newColorPurple);
-
 }
-    function mudaCorH2 (){
+    function mudaCorH2 () {
         const colorGreen = document.getElementById('corVerde'); 
         colorGreen.style.backgroundColor = '#006400'; 
-        colorGreen.style.color = '#006400'
+        colorGreen.style.color = '#006400';
         const colorRed = document.getElementById('corVermelha');
         colorRed.style.backgroundColor = '#8b0000';
-        colorRed.style.color = '#8b0000'
+        colorRed.style.color = '#8b0000';
         const colorBlue = document.getElementById('corAzul');
         colorBlue.style.backgroundColor = '#000066';
-        colorBlue.style.color ='#000066'
+        colorBlue.style.color ='#000066';
         const colorPurple = document.getElementById('corRoxa');
-        colorPurple.style.color = '#66004d'
+        colorPurple.style.color = '#66004d';
         colorPurple.style.backgroundColor = '#66004d'; 
-        
 }
 
-    function criaQuadro (){       
+    function criaQuadro () {       
          
             const sectionQuadro = document.getElementById('pixel-board');           
                const tamanhoQuadro = 5;
@@ -58,10 +55,10 @@ const cadaPixel = document.getElementsByClassName('pixel');
             } 
 }     
     
-    function criaSelected(){ 
-    paleta.addEventListener('click', (event) =>{
+    function criaSelected() { 
+    paleta.addEventListener('click', (event) => {
         const corSelecionada = document.querySelector('.selected')
-        if(corSelecionada){
+        if(corSelecionada) {
             corSelecionada.classList.remove('selected')
         }
 
@@ -70,11 +67,11 @@ const cadaPixel = document.getElementsByClassName('pixel');
     })
 } 
 
-    function selecionaPixel(){
+    function selecionaPixel() {
         for(elemento of cadaPixel){
             elemento.addEventListener('click', (event) => {
                 const pixelSelecionado = document.querySelector('.selected')
-                if(pixelSelecionado){
+                if(pixelSelecionado) {
                     event.target.style.backgroundColor = pixelSelecionado.style.backgroundColor;    
                 salvarEstadoQuadro();
                 }
@@ -83,7 +80,7 @@ const cadaPixel = document.getElementsByClassName('pixel');
         
 }
 
-    function criaBotao(){
+    function criaBotao() {
         const divBtn = document.getElementById('botao');
         const botao = document.createElement('button');
         botao.id = 'clear-board';
@@ -91,7 +88,7 @@ const cadaPixel = document.getElementsByClassName('pixel');
         divBtn.appendChild(botao);
         const todosPixels = document.querySelectorAll('.pixel')
         botao.addEventListener('click', () => {
-            for(elemento of todosPixels){
+            for(elemento of todosPixels) {
             elemento.style.backgroundColor = 'white'
             }
         })
@@ -99,7 +96,7 @@ const cadaPixel = document.getElementsByClassName('pixel');
 
     }
 
-    function criaBotaoAleatorio(){
+    function criaBotaoAleatorio() {
         const coresPaleta = document.querySelectorAll('.color')
         const letras = '0123456789ABCDEF'
         const botaoRandom = document.getElementById('botao-random');
@@ -108,7 +105,7 @@ const cadaPixel = document.getElementsByClassName('pixel');
         newBtn.innerText = 'Cores aleatórias';
         botaoRandom.appendChild(newBtn);
         newBtn.addEventListener('click', () => {
-            for(const elemento of coresPaleta){
+            for(const elemento of coresPaleta) {
                 let corAletoria = '#';
                 for(let index = 0; index < 6; index += 1){
               corAletoria += letras[Math.floor(Math.random() * 16)];                   
