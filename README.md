@@ -1,10 +1,3 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+<h1 align="center"> Projeto Pixels Art </h1>
+Esse projeto teve fianalidade de cirar um quadro de blocos 5x5 onde eu escolheria aleatóriamente a cor que pintaria os blocos.
+Utilizando JavaScript, HTML  e CSS fiz os 3 principais arquivos (index.html, style.css e script.js). Os demais arquivos foram cedidos e fiitos pela Trybe!
